@@ -1,0 +1,73 @@
+<form action="/api/users" method="POST" id="add_user"
+  style="display:flex; flex-direction:column; background-color:antiquewhite; padding:30px;">
+
+  <div class="form-group">
+    <label for="name" class="text-dark">Truck Number</label>
+    <input type="hidden" name="id" value="">
+    <input type="text" name="truckNumber" value="" placeholder="Enter Truck Number">
+  </div>
+  <div class="form-group">
+    <label for="pickdate" class="text-dark">Pick Up Date</label>
+    <input type="date" name="pickdate" value="<%= user.pickdate %>">
+  </div>
+  <div class="form-group">
+    <label for="deldate" class="text-dark">Delivery Date</label>
+    <input type="date" name="deldate" value="<%= user.deldate %>">
+  </div>
+  <div class="form-group">
+    <label for="name" class="text-dark">Truck</label>
+    <input type="hidden" name="id" value="">
+    <input type="text" name="Truck" value="" placeholder="Enter truck">
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="name" class="text-dark"> Sender</label>
+    <input type="hidden" name="id" value="">
+    <input type="text" name="Sender" value="" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label for="name" class="text-dark">Sender Address</label>
+    <input type="hidden" name="id" value="">
+    <input type="text" name="Addresssender" value="" placeholder="Enter Address sender">
+  </div>
+
+  <div class="form-group">
+    <label for="name" class="text-dark">Receiver</label>
+    <input type="hidden" name="id" value="">
+    <input type="text" name="Receiver" value="" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label for="name" class="text-dark">Receiver Address </label>
+    <input type="hidden" name="id" value="">
+    <input type="text" name="Addressreceiver" value="" placeholder="Enter Address">
+  </div>
+
+  <div class="form-group">
+    <label for="name" class="text-dark">Consignment number</label>
+    <input type="hidden" name="id" value="">
+    <input type="text" name="ConsignmentNumber" value="" placeholder="Enter number">
+  </div>
+  <div class="form-group">
+    <label for="name" class="text-dark">Volume</label>
+    <input type="hidden" name="id" value="">
+    <input type="text" name="Volume" value="" placeholder="Enter number">
+  </div>
+
+  <div class="form-group">
+    <label for="status" class="text-dark">Status</label>
+    <div class="radio inline">
+      <input type="radio" id="radio-2" name="Status" value="Pending">
+      <label for="radio-2" class="radio-label">Pending</label>
+    </div>
+    <div class="radio inline">
+      <input type="radio" id="radio-3" name="Status" value="Arrived">
+      <label for="radio-3" class="radio-label">Arrived</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn text-dark update">Save</button>
+  </div>
+
+</form>

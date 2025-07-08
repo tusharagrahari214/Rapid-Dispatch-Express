@@ -1,0 +1,109 @@
+<!-- include header -->
+<!-- <%- include('../include/header.ejs') %> -->
+<!-- /include header -->
+
+<link rel="stylesheet" href="styles/form.css">
+
+<body class="hero-anime" style="background-color:antiquewhite">
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="form-title text-center">
+      <div class="box-nav d-flex justify-between">
+        <a href="/view" class="border-shadow">
+          <span class="text-gradient"><i class="fas fa-angle-double-left"></i> View More
+            Consignment
+          </span>
+        </a>
+      </div>
+      <h2 class="text-dark">Consignment Details</h2>
+    </div>
+
+    <div class="new_user">
+      <div class="form-group">
+        <label for="truckNumber" class="text-dark">Truck Number:</label>
+        <span name="trucknumber">
+          <%= user.truckNumber %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="pickdate" class="text-dark">Pick Up Date</label>
+        <span>
+          <%= user.pickdate %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="deldate" class="text-dark">Delivery Date</label>
+        <span>
+          <%= user.deldate %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="text-dark">Truck</label>
+        <span>
+          <%= user.Truck %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="text-dark">Sender</label>
+        <span>
+          <%= user.Sender %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="text-dark">Sender Address</label>
+        <span>
+          <%= user.Addresssender %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="text-dark">Receiver</label>
+        <span>
+          <%= user.Receiver %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="text-dark">Receiver Address</label>
+        <span>
+          <%= user.Addressreceiver %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="status" class="text-dark">Status</label>
+        <span>
+          <%= user.Status %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="text-dark">Consignment Number</label>
+        <span>
+          <%= user.ConsignmentNumber %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="text-dark">Volume</label>
+        <span>
+          <%= user.Volume %>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <button type="button" class="btn text-dark"></button>
+      </div>
+    </div>
+  </div>
+  <!-- include footer -->
+  <%- include('../include/footer.ejs') %>
+    <!-- /include footer -->
+</body>

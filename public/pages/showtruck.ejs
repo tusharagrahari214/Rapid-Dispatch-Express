@@ -1,0 +1,107 @@
+<!-- include header -->
+<%- include('../include/header.ejs') %>
+    <!-- /include header -->
+
+    <head>
+        <link rel="stylesheet" href="../styles/lawyerview.css">
+        <style>
+            .thead-dark th:hover {
+                background-color: black;
+                color: white;
+            }
+
+            table {
+                background-color: rgb(223, 235, 239);
+            }
+
+            table tr:hover {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body class="hero-anime">
+        <!-- include man+navbar -->
+        <%- include('../include/navbar.ejs') %>
+
+            <div class="container form-area">
+                <!-- form handling -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>Enter Truck Number to Search a Truck</p>
+                <br>
+                <input class="center-block" id="myInput" type="text" placeholder="Search..">
+                <br><br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Truck Name</th>
+                            <th>Truck Model</th>
+                            <th>Truck Number</th>
+                            <th>Truck Year</th>
+                            <th>Truck Capacity</th>
+                            <th>Driver Name</th>
+                            <th>Driver License</th>
+                            <th>Driver Contact No.</th>
+                            <th>Truck Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="myTable">
+                        <!-- Trucks data will be populated here using JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- include footer -->
+            <%- include('../include/footer.ejs') %>
+                <!-- /include footer -->
+
+                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                        $("#myInput").on("keyup", function () {
+                            var value = $(this).val().toLowerCase();
+                            $(".myTable tr").filter(function () {
+                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                            });
+                        });
+
+                        // Fetch data from the server using AJAX
+                        $.ajax({
+                            url: "/api/users2", // Endpoint to fetch trucks data
+                            method: "GET",
+                            success: function (trucks) {
+                                // Populate the table with the fetched data
+                                trucks.forEach(function (truck) {
+                                    var row = "<tr>" +
+                                        "<td>" + truck.truck_name + "</td>" +
+                                        "<td>" + truck.truck_model + "</td>" +
+                                        "<td>" + truck.truck_number + "</td>" +
+                                        "<td>" + truck.truck_year + "</td>" +
+                                        "<td>" + truck.truck_capacity + "</td>" +
+                                        "<td>" + truck.driver_name + "</td>" +
+                                        "<td>" + truck.driver_license + "</td>" +
+                                        "<td>" + truck.driver_contact + "</td>" +
+                                        "<td>" + truck.truck_status + "</td>" +
+                                        "</tr>";
+                                    $(".myTable").append(row);
+                                });
+                            },
+                            error: function (xhr, status, error) {
+                                console.error(error);
+                            }
+                        });
+
+                        // Handle selection and redirection to updateTruck page
+                        $(".myTable").on("click", "tr", function () {
+                            var truckNumber = $(this).find("td:nth-child(3)").text(); // Assuming truck number is in the 3rd column
+                            window.location.href = "/updateTruck?truckNumber=" + encodeURIComponent(truckNumber);
+                        });
+
+                    });
+                </script>
+    </body>
+
+    </html>

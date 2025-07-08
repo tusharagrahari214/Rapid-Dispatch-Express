@@ -1,0 +1,118 @@
+<!-- <%- include('../include/header.ejs') %>
+
+    <link rel="stylesheet" href="styles/form.css">
+
+    <body class="hero-anime"
+        style="background-color: antiquewhite; display: flex; justify-content: center; align-items: center;">
+        <%- include('../include/navbar.ejs') %>
+            <div class="container">
+                form handling 
+<br>
+<br>
+<br>
+<div class="form-title text-center">
+    <div class="box-nav d-flex justify-between">
+        <a href="/showtruck" class="border-shadow">
+            <span class="text-gradient"><i class="fas fa-angle-double-left"></i>View Trucks</span>
+        </a>
+    </div>
+    <h2 class="text-dark">Update Truck Consignment</h2>
+</div>
+
+<form id="updatetruck" method="PUT" action="/update2" style=" background-color:antiquewhite;display:flex;
+                    justify-content:center;align-items:center">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="truck_name" class="text-dark">Truck Name:</label>
+            <input type="text" id="truck_name" name="truck_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="truck_model" class="text-dark">Truck Model:</label>
+            <input type="text" id="truck_model" name="truck_model" required>
+        </div>
+
+        <div class="form-group">
+            <label for="truck_year" class="text-dark">Year of Manufacture:</label>
+            <input type="number" id="truck_year" name="truck_year" required>
+        </div>
+
+        <div class="form-group">
+            <label for="truck_capacity" class="text-dark">Capacity (in tons):</label>
+            <input type="number" id="truck_capacity" name="truck_capacity" required>
+        </div>
+
+        <div class="form-group">
+            <hr>
+        </div>
+
+        <div class="form-group">
+            <label for="driver_name" class="text-dark">Driver's Name:</label>
+            <input type="text" id="driver_name" name="driver_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="driver_license" class="text-dark">Driver's License Number:</label>
+            <input type="text" id="driver_license" name="driver_license" required>
+        </div>
+        <div class="form-group">
+            <label for="driver_contact" class="text-dark">Driver's Contact Number:</label>
+            <input type="text" id="driver_contact" name="driver_contact" required>
+        </div>
+
+        <div class="form-group">
+            <label class="text-dark">Truck Status:</label>
+
+            <input type="radio" id="free" name="truck_status" value="Free" required>
+            <label for="free" class="radio-label">Free</label>
+
+            <input type="radio" id="on_work" name="truck_status" value="On work" required>
+            <label for="on_work" class="radio-label">On work</label>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update"
+                style="background-color: rgb(108, 222, 108);">Update</button>
+        </div>
+    </div>
+</form>
+</div>
+<%- include('../include/footer.ejs') %>
+    </body>-->
+
+
+<!-- include header -->
+<%- include('../include/header.ejs') %>
+    <!-- /include header -->
+
+    <link rel="stylesheet" href="./styles/form.css">
+
+    <body class="hero-anime">
+        <%- include('../include/navbar.ejs') %>
+            <div class="container">
+                <!-- form handling -->
+                <br>
+                <br>
+                <br>
+                <div class="form-title text-center">
+                    <div class="box-nav d-flex justify-between">
+                        <a href="/showTruck" class="border-shadow">
+                            <span class="text-gradient"><i class="fas fa-angle-double-left"></i>View Truck
+                                Details</span>
+                        </a>
+                    </div>
+                    <!-- <h2 class="text-dark">Register a Truck</h2> -->
+                </div>
+                <!-- addTruck.ejs -->
+                <div class="container">
+                    <div class="row">
+                        <h2 class="text-dark">Update Truck Details </h2>
+                    </div>
+                    <%- include('../include/form3.ejs', { user: {} }) %>
+                        <!-- Provide a default user object or pass the actual user object -->
+                </div>
+
+            </div>
+            <!-- include header -->
+            <%- include('../include/footer.ejs') %>
+                <!-- /include header -->

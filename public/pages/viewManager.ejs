@@ -1,0 +1,55 @@
+<!-- till now not in use -->
+<!-- include header -->
+<%- include('../include/header.ejs') %>
+    <!-- /include header -->
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $(".myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+    <body class="hero-anime">
+        <%- include('../include/clientNavbar.ejs') %>
+
+            <div class="container form-area">
+                <!-- form handling -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <!-- <div class="box-nav d-flex justify-between">
+                <a href="/add" class="border-shadow">
+                    <span class="text-gradient">New Case  <i style="font-size:24px" class="fa">&#xf2bb;</i></span>
+                </a>
+            </div> -->
+
+                <br>
+                <h4 class="heading">Manager on Leave</h4><br>
+                <input id="myInput" type="text" placeholder="Search..">
+                <br><br>
+                <form action="/" method="POST">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>managerID</th>
+                                <th>Name</th>
+                                <th>On leave from</th>
+                                <th>On leave till</th>
+                                <th>Nature of leave</th>
+                            </tr>
+                        </thead>
+                        <tbody class="myTable">
+                            <%- include('../include/showManager.ejs') %>
+                        </tbody>
+
+                    </table>
+                </form>
+            </div>
+            <!-- include header -->
+            <%- include('../include/footer.ejs') %>
+                <!-- /include header -->

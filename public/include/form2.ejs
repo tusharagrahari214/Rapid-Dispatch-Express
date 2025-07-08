@@ -1,0 +1,52 @@
+<form action="/api/users2" method="POST" id="add_truck" style="background-color:rgb(232, 198, 151) ;padding: 4px">
+    <table>
+        <tr>
+            <td><label for="truck_name">Truck Name:</label></td>
+            <td><input type="text" id="truck_name" name="truck_name" required></td>
+        </tr>
+        <tr>
+            <td><label for="truck_model">Truck Model:</label></td>
+            <td><input type="text" id="truck_model" name="truck_model" required></td>
+        </tr>
+        <tr>
+            <td><label for="truck_number">Truck Number:</label></td>
+            <td><input type="text" id="truck_number" name="truck_number" required></td>
+        </tr>
+        <tr>
+            <td><label for="truck_year">Year of Manufacture:</label></td>
+            <td><input type="number" id="truck_year" name="truck_year" required></td>
+        </tr>
+        <tr>
+            <td><label for="truck_capacity">Capacity (in tons):</label></td>
+            <td><input type="number" id="truck_capacity" name="truck_capacity" required></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr>
+            </td> <!-- Horizontal line spanning two columns -->
+        </tr>
+        <tr>
+            <td><label for="driver_name">Driver's Name:</label></td>
+            <td><input type="text" id="driver_name" name="driver_name" required></td>
+        </tr>
+        <tr>
+            <td><label for="driver_license">Driver's License Number:</label></td>
+            <td><input type="text" id="driver_license" name="driver_license" required></td>
+        </tr>
+        <tr>
+            <td><label for="driver_contact">Driver's Lcontact Number:</label></td>
+            <td><input type="text" id="driver_contact" name="driver_contact" required></td>
+        </tr>
+        <tr>
+            <td><label>Truck Status:</label></td>
+            <td>
+                <label><input type="radio" name="truck_status" value="Free" required> Free</label>
+                <label><input type="radio" name="truck_status" value="On work" required> On work</label>
+            </td>
+        </tr>
+        <!-- Add more driver information fields as needed -->
+        <tr>
+            <td colspan="2"><button type="submit">Add Truck</button></td> <!-- Button spanning two columns -->
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,40 @@
+<% for(var i=0; i < users.length; i++) if(users[i].Status==="Pending" ) { %>
+    <tr>
+        <!-- &&(Status=="Both"||Status==users[i].Status) -->
+        <td>
+            <%= users[i].truckNumber %>
+        </td>
+        <td>
+            <%= users[i].pickdate%>
+        </td>
+        <td>
+            <%= users[i].Truck%>
+        </td>
+        <td>
+            <%= users[i].Sender%>
+        </td>
+        <td>
+            <%= users[i].Receiver%>
+        </td>
+        <td>
+            <%= users[i].Status %>
+        </td>
+        <td>
+            <%= users[i].ConsignmentNumber%>
+        </td>
+        <td>
+            <%= users[i].Volume%>
+        </td>
+        <td>
+            <a href="/update-truck?id=<%= users[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a href="/seetruckdetail?id=<%= users[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fa fa-eye"></i></span>
+            </a>
+            <a class="btn border-shadow delete" data-id=<%=users[i]._id%> >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+    <% } %>

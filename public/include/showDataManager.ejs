@@ -1,0 +1,36 @@
+<% users.forEach(user=> { %>
+    <tr class="table-row-hover">
+        <td>
+            <%= user.truckNumber %>
+        </td>
+        <td>
+            <%= user.pickdate %>
+        </td>
+        <td>
+            <%= user.deldate %>
+        </td>
+        <td>
+            <%= user.Truck %>
+        </td>
+        <td>
+            <%= user.Sender %>
+        </td>
+        <td>
+            <%= user.Receiver %>
+        </td>
+        <td>
+            <%= user.Status %>
+        </td>
+        <td>
+            <%= user.ConsignmentNumber %>
+        </td>
+        <td>
+            <%= user.Volume %>
+        </td>
+        <td>
+            <a href="/seetruckdetail?id=<%= user._id %>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fa fa-eye"></i></span>
+            </a>
+        </td>
+    </tr>
+    <% }); %>

@@ -1,0 +1,81 @@
+<!-- include header -->
+<%- include('../include/header.ejs') %>
+  <!-- /include header -->
+
+  <head>
+    <link rel="stylesheet" href="../styles/lawyerview.css">
+  </head>
+  <script>
+    $(document).ready(function () {
+      $("#myInput").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".myTable tr").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+
+  <body class="hero-anime">
+    <%- include('../include/navbar.ejs') %>
+      <div class="container form-area">
+        <!-- form handling -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- <div class="box-nav d-flex justify-between">
+          <a href="/addcase" class="border-shadow">
+            <span class="text-gradient" style="color:#e0ae63">New Truck &nbsp;<i class="fas fa-truck"></i></span>
+          </a>
+        </div> -->
+        <!-- <div class="box-nav d-flex justify-between">
+                <a href="/add" class="border-shadow">
+                    <span class="text-gradient">New Case  <i style="font-size:24px" class="fa">&#xf2bb;</i></span>
+                </a>
+            </div> -->
+        <br>
+        <p style="color:#e0ae63;">Enter Truck Number to Search a Truck</p>
+        <input class="center-block" id="myInput" type="text" placeholder="Search..">
+        <br>
+
+        <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Arrived
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/view">All</a>
+            <a class="dropdown-item" href="/viewPending">Pending</a>
+          </div>
+        </div>
+
+        <br>
+        <form action="/" method="POST" style="background-color:antiquewhite;display:flex;
+  justify-content:center;align-items:center">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Truck Number</th>
+                <!-- <th>Pick Up Date</th> -->
+                <th>Delivery Date</th>
+                <th>Truck</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Status</th>
+                <th>Volume</th>
+                <th>Consignment Number</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="myTable">
+              <%- include('../include/showDataArrived.ejs') %>
+            </tbody>
+
+          </table>
+        </form>
+      </div>
+      <!-- include header -->
+      <%- include('../include/footer.ejs') %>
+        <!-- /include header -->

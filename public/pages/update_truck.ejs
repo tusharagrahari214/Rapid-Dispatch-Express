@@ -1,0 +1,105 @@
+<!-- include header -->
+<%- include('../include/header.ejs') %>
+  <!-- /include header -->
+
+  <link rel="stylesheet" href="styles/form.css">
+
+  <body class="hero-anime">
+    <%- include('../include/navbar.ejs') %>
+      <div class="container">
+        <!-- form handling -->
+        <br>
+        <br>
+        <br>
+        <div class="form-title text-center">
+          <div class="box-nav d-flex justify-between">
+            <a href="/view" class="border-shadow">
+              <span class="text-gradient"><i class="fas fa-angle-double-left"></i>View Consignment</span>
+            </a>
+          </div>
+          <h2 class="text-dark">Update Truck Consignment</h2>
+        </div>
+
+        <form method="POST" action="/update" id="update_user" style="background-color:antiquewhite;display:flex;
+  justify-content:center;align-items:center">
+          <div class="new_user">
+            <div class="form-group">
+              <input type="hidden" name="id" value="<%= user && user._id %>">
+              <label for="caseNumber" class="text-dark"></label>
+              <input type="hidden" name="caseNumber" value="<%= user && user.caseNumber %>">
+            </div>
+
+            <div class="form-group">
+              <label for="truckNumber" class="text-dark">Truck Number:</label>
+              <input type="text" name="truckNumber" value="<%= user.truckNumber %>" placeholder="Enter truck Number">
+            </div>
+
+            <div class="form-group">
+              <label for="pickdate" class="text-dark">Pick Up Date</label>
+              <input type="date" name="pickdate" value="<%= user.pickdate %>">
+            </div>
+            <div class="form-group">
+              <label for="deldate" class="text-dark">Delivery Date</label>
+              <input type="date" name="deldate" value="<%= user.deldate %>">
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="text-dark">Truck</label>
+              <input type="text" name="Truck" value="<%= user.Truck %>" placeholder="Enter truck">
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="text-dark"> Sender</label>
+              <input type="text" name="Sender" value="<%= user.Sender %>" placeholder="Enter name">
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="text-dark"> Sender Address</label>
+              <input type="text" name="Addresssender" value="<%= user.Addresssender %>" placeholder="Enter Address">
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="text-dark">Receiver</label>
+              <input type="text" name="Receiver" value="<%= user.Receiver %>" placeholder="Enter name">
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="text-dark">Receiver Address </label>
+              <input type="text" name="Addressreceiver" value="<%= user.Addressreceiver %>" placeholder="Enter Address">
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="text-dark">Volume</label>
+              <input type="text" name="Volume" value="<%= user.Volume %>" placeholder="Enter volume">
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="text-dark">Consignment Number</label>
+              <input type="text" name="ConsignmentNumber" value="<%= user.ConsignmentNumber %>"
+                placeholder="Enter Consignment Number">
+            </div>
+
+            <div class="form-group">
+              <label for="status" class="text-dark">Status</label>
+              <div class="radio inline">
+                <input type="radio" id="radio-2" name="Status" value="Pending" <%=user.Status=='Pending' ? 'checked'
+                  : '' %>>
+                <label for="radio-2" class="radio-label">Pending</label>
+              </div>
+              <div class="radio inline">
+                <input type="radio" id="radio-3" name="Status" value="Arrived" <%=user.Status=='Arrived' ? 'checked'
+                  : '' %>>
+                <label for="radio-3" class="radio-label">Arrived</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn text-dark update">Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- include header -->
+      <%- include('../include/footer.ejs') %>
+        <!-- /include header -->
+  </body>

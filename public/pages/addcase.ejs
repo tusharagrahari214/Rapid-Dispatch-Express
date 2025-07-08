@@ -1,0 +1,35 @@
+<!-- include header -->
+<%- include('../include/header.ejs') %>
+    <!-- /include header -->
+
+    <link rel="stylesheet" href="./styles/form.css">
+
+    <body class="hero-anime">
+        <%- include('../include/navbar.ejs') %>
+            <div class="container">
+                <!-- form handling -->
+                <br>
+                <br>
+                <br>
+                <div class="form-title text-center">
+                    <div class="box-nav d-flex justify-between">
+                        <a href="/view" class="border-shadow">
+                            <span class="text-gradient"><i class="fas fa-angle-double-left"></i>View Consignment
+                                Details</span>
+                        </a>
+                    </div>
+                    <!-- <h2 class="text-dark">Register a Truck</h2> -->
+                </div>
+                <!-- addcase.ejs -->
+                <div class="container">
+                    <div class="row">
+                        <h2 class="text-dark">Register a Consignmnet</h2>
+                    </div>
+                    <%- include('../include/form.ejs', { user: {} }) %>
+                        <!-- Provide a default user object or pass the actual user object -->
+                </div>
+
+            </div>
+            <!-- include header -->
+            <%- include('../include/footer.ejs') %>
+                <!-- /include header -->

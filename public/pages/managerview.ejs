@@ -1,0 +1,73 @@
+<!-- admin view page -->
+<!-- include header -->
+<%- include('../include/header.ejs') %>
+  <!-- /include header -->
+
+  <head>
+    <link rel="stylesheet" href="../styles/lawyerview.css">
+    <style>
+      .thead-dark th:hover {
+        background-color: black;
+        color: white;
+      }
+
+      table {
+        background-color: rgb(223, 235, 239);
+      }
+    </style>
+  </head>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#myInput").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".myTable tr").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+      });
+    });
+  </script>
+
+  <body class="hero-anime">
+    <!-- include man+navbar -->
+    <%- include('../include/man+navbar.ejs') %>
+
+      <div class="container form-area">
+        <!-- form handling -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>Enter Truck Number to Search a consignment</p>
+        <br>
+        <input class="center-block" id="myInput" type="text" placeholder="Search..">
+        <br><br>
+        <form action="/" method="POST">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Truck Number</th>
+                <th>Pick Up Date</th>
+                <th>Delivery Date</th>
+                <th>Truck</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Status</th>
+                <th>Consignment Number</th>
+                <th>Volume</th>
+                <th>See details</th>
+              </tr>
+            </thead>
+            <tbody class="myTable">
+              <!-- Include to show data in the table -->
+              <%- include('../include/showDataManager.ejs') %>
+            </tbody>
+          </table>
+        </form>
+      </div>
+
+      <!-- include footer -->
+      <%- include('../include/footer.ejs') %>
+        <!-- /include footer -->
+  </body>

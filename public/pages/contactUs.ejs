@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- include header -->
+  <%- include('../include/header.ejs') %>
+    <!-- /include header -->
+    <script src="/public/scripts/contactForm.js"></script> <!-- Adjust the path accordingly -->
+    <script>
+      $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+          var value = $(this).val().toLowerCase();
+          $(".myTable tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+    </script>
+    <style>
+      .table tbody tr:nth-of-type(even) {
+        background-color: lightgray;
+        color: rgb(55, 18, 18);
+      }
+
+      .table tbody tr {
+        border-bottom: 2px solid #009879;
+        color: white;
+      }
+
+      .table tbody tr:hover {
+        color: aqua;
+        background-color: rgb(31, 39, 39);
+        transform: scale(1.05);
+        cursor: grab;
+      }
+
+      .table tbody tr td a:hover {
+        color: aqua;
+      }
+    </style>
+    <style>
+      /* Add your existing styles here */
+
+      #contactForm {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #contactForm h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      #contactForm label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      #contactForm input,
+      #contactForm textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      #contactForm button {
+        background-color: #009879;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: auto;
+      }
+
+      #contactForm button:hover {
+        background-color: #007b66;
+        margin: auto;
+      }
+    </style>
+</head>
+
+<body class="hero-anime">
+  <!-- Include clientNavbar -->
+  <%- include('../include/clientNavbar.ejs') %>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container form-area">
+      <input id="myInput" type="text" placeholder="Search..">
+      <br><br>
+      <!-- Contact Form -->
+      <form id="contactForm" action="mailto:gauravkumar1w@gmail.com" method="post" enctype="text/plain">
+        <h2>Contact Us</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="contactnumber">Contact Number:</label>
+        <input type="tel" id="contactnumber" name="contactnumber" required>
+        <label for="total_weight">Total Consignment Weight:</label>
+        <input type="text" id="total_weight" name="total_weight" required>
+
+        <label for="pickup_address">Pickup Address:</label>
+        <input type="text" id="pickup_address" name="pickup_address" required>
+
+        <label for="delivery_address">Delivery Address:</label>
+        <input type="text" id="delivery_address" name="delivery_address" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <!-- End Contact Form -->
+      <br><br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Branch</th>
+            <th scope="col" style="text-align: center;">Name</th>
+            <th scope="col">Contact</th>
+          </tr>
+        </thead>
+        <tbody class="myTable">
+          <!-- Updated data starts here -->
+          <tr>
+            <td>Prayagraj</td>
+            <td style="text-align: center;">John Doe</td>
+            <td>cpc-prayag@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Andhra Pradesh</td>
+            <td style="text-align: center;">Jane Smith</td>
+            <td>cpc-andhra@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Bombay</td>
+            <td style="text-align: center;">Robert Johnson</td>
+            <td>cpc-bombay@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Kolkata</td>
+            <td style="text-align: center;">Anshuman Tejasvi</td>
+            <td>cpc-cal@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Chhattisgarh</td>
+            <td style="text-align: center;">Govind Rao</td>
+            <td>cpc-cg@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Delhi</td>
+            <td style="text-align: center;">Ayush Sharma</td>
+            <td>cpc-del@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Guwahati</td>
+            <td style="text-align: center;">Arunabh Saikiya</td>
+            <td>cpc-asm@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Gujarat</td>
+            <td style="text-align: center;">Pragyan Tripathi</td>
+            <td>cpc-guj@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Himachal Pradesh</td>
+            <td style="text-align: center;">Alok Das</td>
+            <td>cpc-hp@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Jammu and Kashmir</td>
+            <td style="text-align: center;">Sameeksha Singh</td>
+            <td>cpc-jk@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Jharkhand</td>
+            <td style="text-align: center;">Akash Tomar</td>
+            <td>cpc-jhr@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Karnataka</td>
+            <td style="text-align: center;">Yash </td>
+            <td>cpc-kar@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Kerala</td>
+            <td style="text-align: center;">Daniel Robert</td>
+            <td>cpc-ker@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Madhya Pradesh</td>
+            <td style="text-align: center;">Man Singh Shekhawat</td>
+            <td>cpc-mp@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Madras</td>
+            <td style="text-align: center;">Sethupathi</td>
+            <td>cpc-tn@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Manipur</td>
+            <td style="text-align: center;">Maitri Raj</td>
+            <td>cpc-mnp@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Meghalaya</td>
+            <td style="text-align: center;">Shekhar Dinkar</td>
+            <td>cpc-mgl@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Orissa</td>
+            <td style="text-align: center;">Payal Rajpoot</td>
+            <td>cpc-ori@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Patna</td>
+            <td style="text-align: center;">Aryan Amresh</td>
+            <td>cpc-pat@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Punjab and Haryana</td>
+            <td style="text-align: center;">Sundar Dayal Singh</td>
+            <td>cpc-phc@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Rajasthan</td>
+            <td style="text-align: center;">Priyanka Ranavat</td>
+            <td>cpc-raj@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Sikkim</td>
+            <td style="text-align: center;">Jay Sharma</td>
+            <td>cpc-sik@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Tripura</td>
+            <td style="text-align: center;">Ninad Tambe</td>
+            <td>cpc-trp@tcc.in</td>
+          </tr>
+          <tr>
+            <td>Uttarakhand</td>
+            <td style="text-align: center;">Keshar Rajput</td>
+            <td>cpc-uk@tcc.in</td>
+          </tr>
+          <!-- Updated data ends here -->
+        </tbody>
+      </table>
+    </div>
+    <!-- <script>
+      function sendEmail() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var contactnumber = document.getElementById("contactnumber").value;
+        var total_weight = document.getElementById("total_weight").value;
+        var pickup_address = document.getElementById("pickup_address").value;
+        var delivery_address = document.getElementById("delivery_address").value;
+        var message = document.getElementById("message").value;
+
+        var subject = "New Contact Form Submission";
+        var body = "Name: " + name + "\n";
+        body += "Email: " + email + "\n";
+        body += "Contact Number: " + contactnumber + "\n";
+        body += "Total Consignment Weight: " + total_weight + "\n";
+        body += "Pickup Address: " + pickup_address + "\n";
+        body += "Delivery Address: " + delivery_address + "\n";
+        body += "Message: " + message;
+
+        // Open default email client
+        window.location.href = "mailto:gauravkumar1w@gmail.com?subject=" + subject + "&body=" + body;
+        alert("Email sent");
+      } 
+    </script> -->
+    <!-- include footer -->
+    <%- include('../include/footer.ejs') %>
+      <!-- /include footer -->
+      <!-- <script>D: /VelocityVista/RapidDispatch Express/public/scripts/contactForm.js</script> -->
+
+</body>
+
+</html>
